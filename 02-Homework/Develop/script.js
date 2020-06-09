@@ -17,32 +17,111 @@ function writePassword() {
     var special = confirm(
       "Would you like special characters in your password?"
     );
-    var uChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; /* add "" to each var */
-    var lChar = "abcdefghijklmnopqrstuvwxyz";
-    var int = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0";
-    var spe = "!#$%^&*=+"
-    var userChoices =[];
+
+    var uChar = [
+      "A",
+      "B",
+      "C",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+    ];
+    var lChar = [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+    ];
+    var int = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    var spe = [
+      "!",
+      "@",
+      "#",
+      "$",
+      "%",
+      "^",
+      "&",
+      "*",
+      "(",
+      ")",
+      "{",
+      "}",
+      "[",
+      "]",
+      "=",
+      "<",
+      ">",
+      "/",
+      ",",
+      ".",
+    ];
+    var userChoices = [];
     if (up) {
-      userChoices.push.apply(userChoices, up)
-    };
+      userChoices.push.apply(userChoices, uChar);
+    }
     if (low) {
-      userChoices.push.apply(userChoices, low)
-    };
+      userChoices.push.apply(userChoices, lChar);
+    }
     if (num) {
-      userChoices.push.apply(userChoices, int)
-    };
+      userChoices.push.apply(userChoices, int);
+    }
     if (special) {
-      userChoices.push.apply(userChoices, spe)
-    }; if (userChoices === []) {
-      alert("Not a valid input")
-    };
+      userChoices.push.apply(userChoices, spe);
+    }
+    if (userChoices === []) {
+      alert("Not a valid input");
+    }
     console.log(userChoices);
-    var password = "";
+    /* pushes to random password */
+    var password = [];
     for (var i = 0; i < passwordLength; i++) {
       var randomPasswordNum = Math.floor(Math.random() * userChoices.length);
       console.log(randomPasswordNum);
-      password += userChoices[randomPasswordNum];
+      password.push(userChoices[randomPasswordNum]);
     }
+    password = password.join("");
+    return password;
   }
 
   var password = writePassword();
