@@ -7,7 +7,7 @@ function writePassword() {
     "Please enter desired password length between 8 and 128 characters"
   );
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("Please enter a password between 8 and 128 characters");
+    alert("WRONG INPUT!!");
     writePassword();
   }
   function writePassword() {
@@ -74,28 +74,7 @@ function writePassword() {
       "z",
     ];
     var int = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    var spe = [
-      "!",
-      "@",
-      "#",
-      "$",
-      "%",
-      "^",
-      "&",
-      "*",
-      "(",
-      ")",
-      "{",
-      "}",
-      "[",
-      "]",
-      "=",
-      "<",
-      ">",
-      "/",
-      ",",
-      ".",
-    ];
+    var spe = ["!", "@", "#", "$", "%", "^", "&", "*"];
     var userChoices = [];
     if (up) {
       userChoices.push.apply(userChoices, uChar);
