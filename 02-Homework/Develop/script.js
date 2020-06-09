@@ -17,26 +17,25 @@ function writePassword() {
     var special = confirm(
       "Would you like special characters in your password?"
     );
-    var uChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var uChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; /* add "" to each var */
     var lChar = "abcdefghijklmnopqrstuvwxyz";
     var int = "1, 2, 3, 4, 5, 6, 7, 8, 9, 0";
     var spe = "!#$%^&*=+"
-    var userChoices = '';
+    var userChoices =[];
     if (up) {
-      userChoice = userChoices.push(uChar);
-    }
+      userChoices.push.apply(userChoices, up)
+    };
     if (low) {
-      userChoice = userChoices.push(lChar);
-    }
+      userChoices.push.apply(userChoices, low)
+    };
     if (num) {
-      userChoice = userChoices.push(int);
-    }
+      userChoices.push.apply(userChoices, int)
+    };
     if (special) {
-      userChoice = userChoices.push(spe);
-    } else {
-      alert("Enter valid requirements for password.");
-      writePassword();
-    }
+      userChoices.push.apply(userChoices, spe)
+    }; if (userChoices === []) {
+      alert("Not a valid input")
+    };
     console.log(userChoices);
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
