@@ -15,6 +15,8 @@
 
 ## Usage
 To generate random, secure,  and professional passwords for people.
+HTML:
+<a href="https://ponthierjustin.github.io/password-generator/">Password Generator</a>
 
 
 
